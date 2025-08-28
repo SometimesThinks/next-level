@@ -1,0 +1,17 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+# Code Style and Structure
+
+## Functions
+
+- Prefer Arrow Functions over Function Declarations for components and callbacks.
+- Utility or library functions that are independent of React context may still use function declarations.
+
+## Export Rules
+
+- Prefer **named exports** for components and utilities
+- Use **default exports only** for special cases like `page.tsx`, `layout.tsx` in Next.js
