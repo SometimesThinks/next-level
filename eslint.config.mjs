@@ -1,5 +1,6 @@
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+
 import { FlatCompat } from '@eslint/eslintrc';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -16,9 +17,6 @@ const eslintConfig = [
   },
   // import 순서 정렬
   {
-    plugins: {
-      import: await import('eslint-plugin-import'),
-    },
     rules: {
       'import/order': [
         'warn',
