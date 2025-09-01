@@ -1,3 +1,7 @@
-export default function Home() {
-  return <div>Home</div>;
-}
+import PostList from '@/components/posts/PostList';
+
+const Home = () => {
+  return <PostList />;
+};
+
+export default Home;
