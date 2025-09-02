@@ -1,17 +1,21 @@
 import Link from 'next/link';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Post } from '@/lib/posts';
 
-const PostListItem = ({ slug }: { slug: string }) => {
+const PostListItem = ({ post }: { post: Post }) => {
+  console.log(post);
+
   return (
-    <Link href={`/posts/${slug}`}>
-      <Card className="min-w-lg w-full max-w-3xl justify-self-center">
+    <Link href={`/posts/${post.slug}`} className="inline-block w-full">
+      <Card className="min-w-lg max-w-3xl justify-self-center">
         <CardHeader>
-          <CardTitle>todo: 제목</CardTitle>
-          <CardDescription>todo: 내용 미리보기</CardDescription>
+          <CardTitle>{post.title}</CardTitle>
+          <CardDescription>{post.excerpt}</CardDescription>
         </CardHeader>
         <CardContent>
-          <p>todo: 작성일, 태그</p>
+          <p>{post.date}</p>
+          <p>{post.tags.join(', ')}</p>
         </CardContent>
       </Card>
     </Link>

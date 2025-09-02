@@ -15,20 +15,20 @@
   - [x] `content/` 폴더 생성 (posts/)
   - [x] 폴더 구조 문서화
 
-- [ ] **기본 레이아웃 컴포넌트 구현** (1시간)
+- [x] **기본 레이아웃 컴포넌트 구현** (1시간)
   - [x] `app/layout.tsx` 기본 구조 작성
   - [x] 메타데이터 설정 (title, description)
-  - [ ] 기본 HTML 구조 (header, main, footer)
-  - [ ] 전역 스타일 import
+  - [x] 기본 HTML 구조 (header, main, footer)
+  - [x] 전역 스타일 import
 
 - [ ] **홈페이지 기본 구조** (1시간)
-  - [ ] `app/page.tsx` 기본 구조 작성
+  - [x] `app/page.tsx` 기본 구조 작성
   - [ ] 간단한 소개 텍스트 추가
-  - [ ] 기본 레이아웃 적용
+  - [x] 기본 레이아웃 적용
 
 - [ ] **전역 스타일 설정** (1.5시간)
-  - [ ] `app/globals.css` 기본 스타일 작성
-  - [ ] Tailwind CSS 기본 설정
+  - [x] `app/globals.css` 기본 스타일 작성
+  - [x] Tailwind CSS 기본 설정
   - [ ] 색상 변수 및 기본 폰트 설정
 
 #### 오후 (4시간) - UI 컴포넌트 및 기능
@@ -72,8 +72,8 @@
 #### 오전 (4시간) - 마크다운 처리 시스템
 
 - [ ] **마크다운 처리 라이브러리 설치 및 설정** (1시간)
-  - [ ] `npm install gray-matter remark remark-html rehype-highlight`
-  - [ ] `npm install @types/mdast` (타입 지원)
+  - [x] `npm install gray-matter remark remark-html rehype-highlight`
+  - [x] `npm install @types/mdast` (타입 지원)
   - [ ] 라이브러리 버전 호환성 확인
 
 - [ ] **`lib/markdown.ts` 구현** (2시간)

@@ -1,5 +1,62 @@
-const PostDetail = () => {
-  return <div>PostDetail</div>;
+import { notFound } from 'next/navigation';
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { getPostBySlug } from '@/lib/posts';
+
+interface PostDetailProps {
+  slug: string;
+}
+
+const PostDetail = async ({ slug }: PostDetailProps) => {
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('ko-KR', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
+
+  return (
+    <div className="mx-auto max-w-4xl px-4 py-8">
+      {/* 포스트 헤더 */}
+      <Card className="mb-8">
+        <CardHeader>
+          <CardTitle className="mb-4 text-3xl font-bold">{post.title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div
+            className="prose prose-lg max-w-none"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+          <br />
+          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+            <span>{formatDate(post.date)}</span>
+            {post.tags.length > 0 && (
+              <>
+                <span>•</span>
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
 };
 
 export default PostDetail;
