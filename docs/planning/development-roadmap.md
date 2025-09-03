@@ -71,26 +71,26 @@
 
 #### 오전 (4시간) - 마크다운 처리 시스템
 
-- [ ] **마크다운 처리 라이브러리 설치 및 설정** (1시간)
+- [x] **마크다운 처리 라이브러리 설치 및 설정** (1시간)
   - [x] `npm install gray-matter remark remark-html rehype-highlight`
   - [x] `npm install @types/mdast` (타입 지원)
-  - [ ] 라이브러리 버전 호환성 확인
+  - [x] 라이브러리 버전 호환성 확인
 
-- [ ] **`lib/markdown.ts` 구현** (2시간)
-  - [ ] `parseMarkdown` 함수 구현 (gray-matter + remark)
-  - [ ] `getAllPosts` 함수 구현 (파일 시스템 스캔)
-  - [ ] `getPostBySlug` 함수 구현 (단일 포스트 파싱)
-  - [ ] 에러 처리 및 로깅 추가
+- [x] **`lib/markdown.ts` 구현** (2시간)
+  - [x] `parseMarkdown` 함수 구현 (gray-matter + remark)
+  - [x] `getAllPosts` 함수 구현 (파일 시스템 스캔)
+  - [x] `getPostBySlug` 함수 구현 (단일 포스트 파싱)
+  - [x] 에러 처리 및 로깅 추가
 
 - [ ] **기본 마크다운 렌더링 컴포넌트 구현** (1시간)
   - [ ] `components/blog/MarkdownRenderer.tsx` 생성
-  - [ ] 기본 마크다운 요소 렌더링 (h1-h6, p, ul, ol, blockquote)
-  - [ ] 링크 및 이미지 렌더링
+  - [x] 기본 마크다운 요소 렌더링 (h1-h6, p, ul, ol, blockquote)
+  - [x] 링크 및 이미지 렌더링
 
 #### 오후 (4시간) - 고급 렌더링 및 최적화
 
 - [ ] **코드 블록 하이라이팅 설정** (1.5시간)
-  - [ ] `rehype-highlight` 플러그인 설정
+  - [x] `rehype-highlight` 플러그인 설정
   - [ ] 커스텀 코드 블록 스타일링
   - [ ] 언어별 하이라이팅 지원
   - [ ] 코드 복사 버튼 추가
@@ -132,8 +132,8 @@
   - [ ] 기본 페이지 레이아웃
 
 - [ ] **포스트 목록 컴포넌트** (1.5시간)
-  - [ ] `components/blog/PostList.tsx` 생성
-  - [ ] 포스트 배열을 받아서 렌더링
+  - [x] `components/blog/PostList.tsx` 생성
+  - [x] 포스트 배열을 받아서 렌더링
   - [ ] 로딩 상태 및 에러 상태 처리
   - [ ] 빈 상태 UI 구현
 

@@ -14,7 +14,7 @@ const PostList = async () => {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-4">
+    <div className="flex flex-col items-center gap-4">
       {posts.map((post) => (
         <PostListItem key={post.slug} post={post} />
       ))}

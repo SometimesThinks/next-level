@@ -4,11 +4,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Post } from '@/lib/posts';
 
 const PostListItem = ({ post }: { post: Post }) => {
-  console.log(post);
-
   return (
-    <Link href={`/posts/${post.slug}`} className="inline-block w-full">
-      <Card className="min-w-lg max-w-3xl justify-self-center">
+    <Link href={`/posts/${post.slug}`} className="min-w-lg max-w-3xl">
+      <Card>
         <CardHeader>
           <CardTitle>{post.title}</CardTitle>
           <CardDescription>{post.excerpt}</CardDescription>
