@@ -40,14 +40,14 @@
   - [ ] 활성 링크 하이라이트
 
 - [ ] **다크 모드 토글 기능 구현** (1.5시간)
-  - [ ] `components/ui/ThemeToggle.tsx` 생성
-  - [ ] `useTheme` 훅 구현
+  - [x] `components/ui/ThemeToggle.tsx` 생성
+  - [x] `useTheme` 훅 구현
   - [ ] localStorage 기반 테마 저장
   - [ ] 시스템 테마 감지
 
 - [ ] **기본 UI 컴포넌트 설정** (45분)
-  - [ ] shadcn/ui 컴포넌트 설치
-  - [ ] Button, Card, Input 기본 컴포넌트 설정
+  - [x] shadcn/ui 컴포넌트 설치
+  - [x] Button, Card, Input 기본 컴포넌트 설정
   - [ ] 컴포넌트 스타일 테마 적용
 
 - [ ] **반응형 레이아웃 기본 구조** (45분)
@@ -95,10 +95,10 @@
   - [ ] 언어별 하이라이팅 지원
   - [ ] 코드 복사 버튼 추가
 
-- [ ] **샘플 마크다운 파일 생성 및 테스트** (1시간)
-  - [ ] `content/posts/hello-world.md` 샘플 파일 생성
-  - [ ] 다양한 마크다운 문법 테스트
-  - [ ] 렌더링 결과 검증
+- [x] **샘플 마크다운 파일 생성 및 테스트** (1시간)
+  - [x] `content/posts/hello-world.md` 샘플 파일 생성
+  - [x] 다양한 마크다운 문법 테스트
+  - [x] 렌더링 결과 검증
 
 - [ ] **frontmatter 파싱 및 메타데이터 추출** (1시간)
   - [ ] 제목, 작성일, 태그, 요약 필드 파싱
@@ -126,10 +126,10 @@
 
 #### 오전 (4시간) - 핵심 컴포넌트 구현
 
-- [ ] **`app/posts/page.tsx` 구현** (1시간)
-  - [ ] 정적 생성 설정 (`generateStaticParams`)
-  - [ ] 포스트 데이터 가져오기 (`getAllPosts`)
-  - [ ] 기본 페이지 레이아웃
+- [x] **`app/posts/page.tsx` 구현** (1시간)
+  - [x] 정적 생성 설정 (`generateStaticParams`)
+  - [x] 포스트 데이터 가져오기 (`getAllPosts`)
+  - [x] 기본 페이지 레이아웃
 
 - [ ] **포스트 목록 컴포넌트** (1.5시간)
   - [x] `components/blog/PostList.tsx` 생성
@@ -138,9 +138,9 @@
   - [ ] 빈 상태 UI 구현
 
 - [ ] **포스트 카드 컴포넌트** (1.5시간)
-  - [ ] `components/blog/PostCard.tsx` 생성
-  - [ ] 제목, 요약, 태그, 작성일 표시
-  - [ ] 클릭 시 포스트 상세 페이지로 이동
+  - [x] `components/blog/PostCard.tsx` 생성
+  - [x] 제목, 요약, 태그, 작성일 표시
+  - [x] 클릭 시 포스트 상세 페이지로 이동
   - [ ] 호버 효과 및 애니메이션
 
 #### 오후 (4시간) - 고급 기능 및 스타일링
@@ -182,10 +182,10 @@
 #### 오전 (4시간) - 동적 라우팅 및 기본 구조
 
 - [ ] **동적 라우팅 설정** (1시간)
-  - [ ] `app/posts/[slug]/page.tsx` 생성
+  - [x] `app/posts/[slug]/page.tsx` 생성
   - [ ] `generateStaticParams` 함수 구현
   - [ ] `getPostBySlug` 함수 호출
-  - [ ] 404 에러 처리
+  - [x] 404 에러 처리
 
 - [ ] **포스트 상세 컴포넌트** (1.5시간)
   - [ ] `components/blog/PostContent.tsx` 생성
@@ -286,7 +286,7 @@
 #### 오전 (4시간) - 에러 처리 및 로딩 상태
 
 - [ ] **404 에러 페이지 구현** (1시간)
-  - [ ] `app/not-found.tsx` 생성
+  - [x] `app/not-found.tsx` 생성
   - [ ] 사용자 친화적인 에러 메시지
   - [ ] 홈으로 돌아가기 버튼
   - [ ] 검색 기능 포함

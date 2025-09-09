@@ -1,7 +1,9 @@
 import { notFound } from 'next/navigation';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { getPostBySlug } from '@/lib/posts';
+import { formatDate } from '@/lib/utils';
 
 interface PostDetailProps {
   slug: string;
@@ -9,19 +11,9 @@ interface PostDetailProps {
 
 const PostDetail = async ({ slug }: PostDetailProps) => {
   const post = await getPostBySlug(slug);
-  console.log(post);
-
   if (!post) {
     notFound();
   }
-
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('ko-KR', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  };
 
   return (
     <div className="mx-auto max-w-4xl">
@@ -34,26 +26,20 @@ const PostDetail = async ({ slug }: PostDetailProps) => {
             className="prose-foreground prose prose-lg max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
-          <br />
-          <div className="flex flex-wrap items-center gap-4 text-sm">
-            <span>{formatDate(post.date)}</span>
-            {post.tags.length > 0 && (
-              <>
-                <span>•</span>
-                <div className="flex flex-wrap gap-2">
-                  {post.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
         </CardContent>
+        <CardFooter className="flex-wrap items-center gap-2 text-sm">
+          <span>{formatDate(post.date)}</span>
+          {post.tags.length > 0 && (
+            <>
+              <span>•</span>
+              {post.tags.map((tag) => (
+                <Badge key={tag} variant="secondary" className="px-2 py-1">
+                  {tag}
+                </Badge>
+              ))}
+            </>
+          )}
+        </CardFooter>
       </Card>
     </div>
   );
