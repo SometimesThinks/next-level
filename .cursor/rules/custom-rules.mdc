@@ -4,6 +4,14 @@ globs:
 alwaysApply: true
 ---
 
+# Coding Environment
+
+- TypeScript ^5
+- React 19.1.0
+- NextJS 15.5.0
+- Tailwind ^3.4.17
+- Schdcn
+
 # Code Style and Structure
 
 ## Functions

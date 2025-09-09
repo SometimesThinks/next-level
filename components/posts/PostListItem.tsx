@@ -5,11 +5,11 @@ import { Post } from '@/lib/posts';
 
 const PostListItem = ({ post }: { post: Post }) => {
   return (
-    <Link href={`/posts/${post.slug}`} className="min-w-lg max-w-3xl">
-      <Card>
+    <Link href={`/posts/${post.slug}`}>
+      <Card className="min-w-lg max-w-3xl border-b border-border bg-background text-foreground dark:bg-background dark:text-foreground">
         <CardHeader>
           <CardTitle>{post.title}</CardTitle>
-          <CardDescription>{post.excerpt}</CardDescription>
+          <CardDescription className="text-muted-foreground">{post.excerpt}</CardDescription>
         </CardHeader>
         <CardContent>
           <p>{post.date}</p>

@@ -1,12 +1,8 @@
-import { notFound } from 'next/navigation';
-
 import PostDetail from '@/components/posts/PostDetail';
 import { getPostBySlug, getAllPosts } from '@/lib/posts';
 
 interface PostDetailPageProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 }
 
 // 정적 생성할 포스트 목록 생성
@@ -20,7 +16,8 @@ export async function generateStaticParams() {
 
 // 메타데이터 생성
 export async function generateMetadata({ params }: PostDetailPageProps) {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     return {
@@ -35,8 +32,10 @@ export async function generateMetadata({ params }: PostDetailPageProps) {
   };
 }
 
-const PostDetailPage = ({ params }: PostDetailPageProps) => {
-  return <PostDetail slug={params.slug} />;
+const PostDetailPage = async ({ params }: PostDetailPageProps) => {
+  const { slug } = await params;
+
+  return <PostDetail slug={slug} />;
 };
 
 export default PostDetailPage;

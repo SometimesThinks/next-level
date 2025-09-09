@@ -1,3 +1,5 @@
+import { ThemeProvider } from 'next-themes';
+
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 
@@ -17,11 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <ThemeProvider attribute="class">
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="my-16 flex-1">{children}</main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

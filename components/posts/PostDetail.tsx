@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getPostBySlug } from '@/lib/posts';
 
 interface PostDetailProps {
@@ -9,6 +9,7 @@ interface PostDetailProps {
 
 const PostDetail = async ({ slug }: PostDetailProps) => {
   const post = await getPostBySlug(slug);
+  console.log(post);
 
   if (!post) {
     notFound();
@@ -23,19 +24,18 @@ const PostDetail = async ({ slug }: PostDetailProps) => {
   };
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8">
-      {/* 포스트 헤더 */}
-      <Card className="mb-8">
+    <div className="mx-auto max-w-4xl">
+      <Card className="border-b bg-background text-foreground dark:bg-background dark:text-foreground">
         <CardHeader>
           <CardTitle className="mb-4 text-3xl font-bold">{post.title}</CardTitle>
         </CardHeader>
         <CardContent>
           <div
-            className="prose prose-lg max-w-none"
+            className="prose-foreground prose prose-lg max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
           <br />
-          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+          <div className="flex flex-wrap items-center gap-4 text-sm">
             <span>{formatDate(post.date)}</span>
             {post.tags.length > 0 && (
               <>
