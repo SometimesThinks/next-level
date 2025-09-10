@@ -19,10 +19,11 @@ const Header = () => {
     <header className="mx-2 border-b-2 bg-background p-4 text-foreground dark:bg-background dark:text-foreground">
       <div className="flex items-center justify-between">
         {/* 홈 타이틀 박스 */}
-        <div>
+        <div className="flex items-end gap-4">
           <Link href="/" className="text-xl font-bold">
             Next Lvl
           </Link>
+          <span className="text-sm text-muted-foreground">on to the next level</span>
         </div>
         {/* 오른쪽 액션 버튼 박스 */}
         <div className="space-x-2">

@@ -28,17 +28,17 @@ const PostDetail = async ({ slug }: PostDetailProps) => {
           />
         </CardContent>
         <CardFooter className="flex-wrap items-center gap-2 text-sm">
-          <span>{formatDate(post.date)}</span>
           {post.tags.length > 0 && (
             <>
-              <span>•</span>
               {post.tags.map((tag) => (
                 <Badge key={tag} variant="secondary" className="px-2 py-1">
                   {tag}
                 </Badge>
               ))}
+              <span>•</span>
             </>
           )}
+          <span>{formatDate(post.date)}</span>
         </CardFooter>
       </Card>
     </div>

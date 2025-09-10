@@ -24,7 +24,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class">
           <div className="flex min-h-screen flex-col">
             <Header />
-            <main className="my-16 flex-1">{children}</main>
+            {children}
             <Footer />
           </div>
         </ThemeProvider>
