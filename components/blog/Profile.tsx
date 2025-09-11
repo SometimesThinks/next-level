@@ -1,4 +1,5 @@
 import { Mail, Github, Linkedin } from 'lucide-react';
+import Link from 'next/link';
 
 import { Avatar, AvatarImage } from '../ui/avatar';
 import { Card, CardHeader, CardFooter, CardContent, CardTitle, CardDescription } from '../ui/card';
@@ -14,14 +15,18 @@ const Profile = () => {
         <CardDescription>Frontend Developer</CardDescription>
       </CardHeader>
       <CardContent>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+        <p className="text-sm">호기심 많은 프론트엔드 개발자입니다.</p>
       </CardContent>
-      <CardFooter className="gap-2">
-        {/* todo: 아이콘 클릭시 링크로 이동 */}
-        {/* todo: 아이콘 변경 */}
-        <Mail />
-        <Github />
-        <Linkedin />
+      <CardFooter className="gap-4">
+        <Link href="https://github.com/SometimesThinks">
+          <Github />
+        </Link>
+        <Link href="https://www.linkedin.com/in/daeyeong-yun-aabb37323/">
+          <Linkedin />
+        </Link>
+        <Link href="mailto:ycw2859@gmail.com">
+          <Mail />
+        </Link>
       </CardFooter>
     </Card>
   );

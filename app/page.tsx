@@ -23,7 +23,7 @@ const Home = async ({ searchParams }: HomeProps) => {
       <main className="lg:col-span-3 lg:col-start-2">
         <PostList posts={filteredPosts} />
       </main>
-      <aside className="hidden space-y-6 lg:col-span-1 lg:block">
+      <aside className="hidden space-y-6 lg:col-span-1 lg:col-start-6 lg:block">
         <Profile />
         <TagList activeTag={tag || ''} />
       </aside>
