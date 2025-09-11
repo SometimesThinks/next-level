@@ -1,11 +1,15 @@
-import { getAllPosts } from '@/lib/posts';
+import { getAllPosts, Post } from '@/lib/posts';
 
 import PostListItem from './PostListItem';
 
-const PostList = async () => {
-  const posts = await getAllPosts();
+interface PostListProps {
+  posts?: Post[];
+}
 
-  if (posts.length === 0) {
+const PostList = async ({ posts }: PostListProps) => {
+  const postList = posts || (await getAllPosts());
+
+  if (postList.length === 0) {
     return (
       <div className="py-8 text-center">
         <p className="text-gray-500">아직 작성된 포스트가 없습니다.</p>
@@ -15,7 +19,7 @@ const PostList = async () => {
 
   return (
     <div className="flex flex-col items-center gap-8">
-      {posts.map((post) => (
+      {postList.map((post) => (
         <PostListItem key={post.slug} post={post} />
       ))}
     </div>
