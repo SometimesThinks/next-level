@@ -39,3 +39,7 @@ module.exports = {
 ## 결론
 
 Tailwind CSS는 현대적인 웹 개발에 필수적인 도구입니다.
+
+## references
+
+https://www.naver.com/
