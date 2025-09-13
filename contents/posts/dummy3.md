@@ -23,8 +23,7 @@ Tailwind CSS는 유틸리티 퍼스트 CSS 프레임워크로, 미리 정의된 
 
 ## 커스터마이징
 
-```javascript
-// tailwind.config.js
+```javascript showLineNumbers
 module.exports = {
   theme: {
     extend: {
@@ -42,4 +41,4 @@ Tailwind CSS는 현대적인 웹 개발에 필수적인 도구입니다.
 
 ## references
 
-https://www.naver.com/
+[https://naver.com](https://naver.com)

@@ -1,8 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 
+import { transformerCopyButton } from '@rehype-pretty/transformers';
 import matter from 'gray-matter';
-import rehypeHighlight from 'rehype-highlight';
+import rehypeExternalLinks from 'rehype-external-links';
+import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeStringify from 'rehype-stringify';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
@@ -48,7 +50,18 @@ const markdownToHtml = async (markdown: string): Promise<string> => {
   const result = await unified()
     .use(remarkParse)
     .use(remarkRehype)
-    .use(rehypeHighlight)
+    .use(rehypePrettyCode, {
+      transformers: [
+        transformerCopyButton({
+          visibility: 'always',
+          feedbackDuration: 3_000,
+        }),
+      ],
+    })
+    .use(rehypeExternalLinks, {
+      target: '_blank',
+      rel: ['noopener', 'noreferrer'],
+    })
     .use(rehypeStringify)
     .process(markdown);
 

@@ -23,7 +23,7 @@ const PostDetail = async ({ slug }: PostDetailProps) => {
         </CardHeader>
         <CardContent>
           <div
-            className="prose-foreground prose prose-lg max-w-none"
+            className="prose-foreground markdown-content prose prose-lg max-w-none"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </CardContent>
