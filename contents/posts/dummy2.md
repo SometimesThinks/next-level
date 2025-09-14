@@ -1,9 +1,9 @@
 ---
-title: 'TypeScript 베스트 프랙티스 10가지'
+title: '[dummy2] testing2'
 tags: ['TypeScript', 'JavaScript', 'Development']
 ---
 
-# TypeScript 베스트 프랙티스 10가지
+# [dummy2] testing2
 
 ## 1. 타입 정의의 중요성
 

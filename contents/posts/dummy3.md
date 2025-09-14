@@ -1,9 +1,9 @@
 ---
-title: 'Tailwind CSS 활용 팁: 효율적인 스타일링'
+title: '[dummy3] testing3'
 tags: ['Tailwind CSS', 'CSS', 'Frontend']
 ---
 
-# Tailwind CSS 활용 팁: 효율적인 스타일링
+# [dummy3] testing3
 
 ## Tailwind CSS란?
 
@@ -23,7 +23,7 @@ Tailwind CSS는 유틸리티 퍼스트 CSS 프레임워크로, 미리 정의된 
 
 ## 커스터마이징
 
-```javascript showLineNumbers
+```javascript
 module.exports = {
   theme: {
     extend: {

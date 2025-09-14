@@ -1,9 +1,9 @@
 ---
-title: 'Next.js 15 시작하기: 완벽 가이드'
+title: '[dummy1] testing1'
 tags: ['Next.js', 'React', 'TypeScript']
 ---
 
-# Next.js 15 시작하기: 완벽 가이드
+# [dummy1] testing1
 
 ## 소개
 

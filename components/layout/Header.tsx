@@ -1,6 +1,6 @@
 'use client';
 
-import { Terminal, LayoutPanelLeft, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect, useCallback } from 'react';
 
@@ -48,14 +48,14 @@ const Header = () => {
       <header className="mx-2 border-b-2 bg-background p-4 text-foreground dark:bg-background dark:text-foreground">
         <div className="flex items-center justify-between">
           {/* 홈 타이틀 박스 */}
-          <div className="flex items-end gap-4">
+          <div className="ml-4 flex items-end gap-4">
             <Link href="/" className="text-xl font-bold">
               Next Lvl
             </Link>
             <span className="text-sm text-muted-foreground">on to the next level</span>
           </div>
           {/* 오른쪽 액션 버튼 박스 */}
-          <div className="space-x-2">
+          <div className="mr-4 space-x-2">
             <Button variant="ghost" size="icon" className="h-10 w-10" onClick={openSearch}>
               <Search className="h-6 w-6" />
             </Button>
