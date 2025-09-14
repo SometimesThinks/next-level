@@ -19,7 +19,7 @@ const Home = async ({ searchParams }: HomeProps) => {
     : allPosts;
 
   return (
-    <div className="my-16 grid grid-cols-1 justify-center lg:grid-cols-6">
+    <div className="my-16 mb-[50vh] grid grid-cols-1 justify-center lg:grid-cols-6">
       <main className="lg:col-span-3 lg:col-start-2">
         <PostList posts={filteredPosts} />
       </main>

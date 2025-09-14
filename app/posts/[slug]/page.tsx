@@ -35,7 +35,13 @@ export async function generateMetadata({ params }: PostDetailPageProps) {
 const PostDetailPage = async ({ params }: PostDetailPageProps) => {
   const { slug } = await params;
 
-  return <PostDetail slug={slug} />;
+  return (
+    <div className="my-16 mb-[50vh]">
+      <main>
+        <PostDetail slug={slug} />
+      </main>
+    </div>
+  );
 };
 
 export default PostDetailPage;

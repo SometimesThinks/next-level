@@ -9,6 +9,26 @@ import rehypeStringify from 'rehype-stringify';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
+import { visit } from 'unist-util-visit';
+
+// 목차 아이템 타입
+export type TocItem = { depth: number; value: string; id: string };
+
+// 목차 수집 함수
+function remarkCollectToc(toc: TocItem[]) {
+  return () => (tree: any) => {
+    visit(tree, 'heading', (node: any) => {
+      const text = node.children
+        .filter((c: any) => c.type === 'text')
+        .map((c: any) => c.value)
+        .join(' ');
+      const id = text.toLowerCase().replace(/\s+/g, '-');
+
+      node.data = { hProperties: { id } };
+      toc.push({ depth: node.depth, value: text, id });
+    });
+  };
+}
 
 // 포스트 데이터 타입 정의
 export interface Post {
@@ -18,6 +38,7 @@ export interface Post {
   content: string;
   excerpt: string;
   date: string;
+  toc: TocItem[];
 }
 
 // 리스트용 경량 포스트 데이터 타입
@@ -47,8 +68,11 @@ const getPostSlugs = (): string[] => {
 
 // 마크다운을 HTML로 변환하는 함수
 const markdownToHtml = async (markdown: string): Promise<string> => {
+  const toc: TocItem[] = [];
+
   const result = await unified()
     .use(remarkParse)
+    .use(remarkCollectToc(toc))
     .use(remarkRehype)
     .use(rehypePrettyCode, {
       transformers: [
@@ -65,7 +89,7 @@ const markdownToHtml = async (markdown: string): Promise<string> => {
     .use(rehypeStringify)
     .process(markdown);
 
-  return result.toString();
+  return { html: result.toString(), toc };
 };
 
 // 특정 슬러그로 포스트 데이터 가져오기
@@ -85,7 +109,7 @@ export const getPostBySlug = async (slug: string): Promise<Post | null> => {
         .substring(0, 150) + '...';
 
     // 마크다운을 HTML로 변환
-    const htmlContent = await markdownToHtml(content);
+    const { html: htmlContent, toc } = await markdownToHtml(content);
 
     // 파일 생성일 가져오기 (frontmatter date가 없으면 파일 생성일 사용)
     const stats = fs.statSync(fullPath);
@@ -98,6 +122,7 @@ export const getPostBySlug = async (slug: string): Promise<Post | null> => {
       content: htmlContent,
       excerpt,
       date: data.date || fileDate, // frontmatter date가 없으면 파일 생성일 사용
+      toc,
     };
   } catch (error) {
     console.error(`Error reading post ${slug}:`, error);
