@@ -48,7 +48,7 @@ const Header = () => {
       <header className="mx-2 border-b-2 bg-background p-4 text-foreground dark:bg-background dark:text-foreground">
         <div className="flex items-center justify-between">
           {/* 홈 타이틀 박스 */}
-          <div className="ml-4 flex items-end gap-4">
+          <div className="ml-4 flex items-center gap-4">
             <Link href="/" className="text-xl font-bold">
               Next Lvl
             </Link>
