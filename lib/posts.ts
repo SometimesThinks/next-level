@@ -11,19 +11,21 @@ import remarkRehype from 'remark-rehype';
 import { unified } from 'unified';
 import { visit } from 'unist-util-visit';
 
+import type { Root, Heading, Text } from 'mdast';
+
 // 목차 아이템 타입
 export type TocItem = { depth: number; value: string; id: string };
 
 // 목차 수집 함수
 function remarkCollectToc(toc: TocItem[]) {
-  return () => (tree: any) => {
-    visit(tree, 'heading', (node: any) => {
+  return () => (tree: Root) => {
+    visit(tree, 'heading', (node: Heading) => {
       const text = node.children
-        .filter((c: any) => c.type === 'text')
-        .map((c: any) => c.value)
+        .filter((el): el is Text => el.type === 'text')
+        .map((el) => el.value)
         .join(' ');
       const id = text.toLowerCase().replace(/\s+/g, '-');
-
+      // 내부 링크 id 추가 (HTML 속성)
       node.data = { hProperties: { id } };
       toc.push({ depth: node.depth, value: text, id });
     });
@@ -164,9 +166,6 @@ export const getAllPostListItems = async (): Promise<PostListItem[]> => {
             .replace(/\n+/g, ' ') // 줄바꿈을 공백으로
             .trim()
             .substring(0, 150) + '...';
-
-        // 마크다운을 HTML로 변환
-        const htmlContent = await markdownToHtml(content);
 
         // 파일 생성일 가져오기 (frontmatter date가 없으면 파일 생성일 사용)
         const stats = fs.statSync(fullPath);
