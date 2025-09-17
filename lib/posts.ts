@@ -67,7 +67,7 @@ const getPostSlugs = (): string[] => {
 };
 
 // 마크다운을 HTML로 변환하는 함수
-const markdownToHtml = async (markdown: string): Promise<string> => {
+const markdownToHtml = async (markdown: string): Promise<{ html: string; toc: TocItem[] }> => {
   const toc: TocItem[] = [];
 
   const result = await unified()
