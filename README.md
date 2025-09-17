@@ -1,13 +1,14 @@
-# 🚀 Terminal Blog - Next Level
+# 🚀 Next Level Blog
 
 Next.js App Router + Tailwind CSS + shadcn/ui 기반의 Git 저장소 기반 마크다운 블로그 프로젝트입니다.
 
 ## ✨ 주요 기능
 
 - 📝 **마크다운 기반 블로그**: Git으로 관리되는 콘텐츠
-- 🖥️ **터미널 뷰**: 개발자를 위한 터미널 인터페이스
 - 🌙 **다크 모드**: 사용자 선호도에 따른 테마 전환
 - 📱 **반응형 디자인**: 모든 디바이스에서 최적화된 경험
+- 🔍 **검색 기능**: 포스트 제목, 내용, 태그 기반 검색
+- �� **목차 자동 생성**: 포스트의 헤딩을 기반으로 한 목차
 
 ## 🚀 빠른 시작
 
@@ -31,22 +32,14 @@ npm run build
 - [🗺️ 개발 로드맵](./docs/planning/development-roadmap.md)
 - [🏗️ 기술 아키텍처](./docs/technical/architecture.md)
 
-## 📅 개발 일정
-
-| 단계        | 기간   | 주요 목표           |
-| ----------- | ------ | ------------------- |
-| **Phase 1** | 1-7일  | 일반 블로그 뷰 완성 |
-| **Phase 2** | 8-14일 | 터미널 뷰 완성      |
-| **배포**    | 14일차 | 프로덕션 배포       |
-
 ## 🛠️ 기술 스택
 
 - **Frontend**: Next.js 15.5.0, React 19.1.0, TypeScript
 - **Styling**: Tailwind CSS, shadcn/ui
 - **Content**: Markdown, gray-matter, remark
-- **Terminal**: xterm.js (Phase 2)
+- **Icons**: Lucide React
 
-## 🎯 개발 방식
+## �� 개발 방식
 
 - GitHub 저장소의 `.md` 파일을 기준으로 정적 렌더링
 - 웹에서 글 작성 기능은 없음 (에디터, 자동완성 기능 제외)
